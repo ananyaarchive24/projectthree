@@ -1,0 +1,230 @@
+.stories-container {
+  display: flex;
+  gap: 15px;
+  padding: 21px 50px;
+  overflow-x: auto;
+  border-bottom: 1px solid #dbdbdb;
+  background: #000;
+  color: white;
+}
+
+.story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 0 25px 0 0;
+}
+
+.story-circle { /* AI HELP */
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative
+}
+
+.story-circle::before {
+  content: '';
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.story-emoji {
+  font-size: 24px;
+  z-index: 1;
+  position: relative;
+}
+
+.add-story::after {
+  content: '+';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #0095f6;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.story-name {
+  font-size: 12px;
+  margin-top: 5px;
+  color: white;
+}
+
+
+/* just gonna add grid css to this file to create less files */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  padding: 50px;
+}
+
+.grid-post {
+  aspect-ratio: 1;
+  background: #A9A9A9;
+  border: 1px solid #A9A9A9;
+    position: relative; /* Add this */
+
+}
+
+.grid-post button {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.grid-post img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* the delete button */
+.post-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* now the modal that the stories open in */
+.story-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black; /* This makes the background black */
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.story-content {
+  position: relative;
+  width: 350px;
+  height: 600px;
+  background: grey; /* This is the white card */
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 20px;
+  text-align: center;
+z-index: 1; /* Add this */
+
+}
+
+.story-prompt {
+  margin-top: 50px;
+  color: black;
+}
+
+.story-prompt h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.story-prompt h3 {
+  font-size: 18px;
+  line-height: 1.4;
+}
+/* Progress bars like Instagram */
+.progress-bars {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  gap: 2px;
+  z-index: 1001;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 1002; /* Increase this */
+  font-size: 18px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 1px;
+}
+
+.progress-bar.active {
+  background: white;
+}
+
+.gradient-1 { background: linear-gradient(45deg, #ff9a9e, #fad0c4); }
+.gradient-2 { background: linear-gradient(45deg, #a1c4fd, #c2e9fb); }
+.gradient-3 { background: linear-gradient(45deg, #ffecd2, #fcb69f); }
+.gradient-4 { background: linear-gradient(45deg, #84fab0, #8fd3f4); }
+.gradient-5 { background: linear-gradient(45deg, #d4fc79, #96e6a1); }
+.gradient-6 { background: linear-gradient(45deg, #a6c0fe, #f68084); }
+.gradient-7 { background: linear-gradient(45deg, #fccb90, #d57eeb); }
+.gradient-8 { background: linear-gradient(45deg, #e0c3fc, #8ec5fc); }
+
+.nav-area {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.nav-area.left {
+  left: 0;
+  width: 50%;
+}
+
+.nav-area.right {
+  right: 0;
+  width: 50%;
+}
