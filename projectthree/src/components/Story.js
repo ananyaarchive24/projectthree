@@ -62,7 +62,7 @@ function Stories() { // each story will hv the title, an emoji, and a journallin
   }, []); 
 
 
-
+  //to save story replies to journal (will do later)
 
   return (
     <div className="stories-container">
