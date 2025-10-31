@@ -1,0 +1,185 @@
+/* tried to make it as similar as possible to instagram dms (no dark mode) and microsoft to do as well */
+
+.messages-page {
+  display: flex;
+  height: 100vh;
+  background: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 10px;
+  margin: 0;
+  color: black;
+}
+
+.fake-heading{
+  text-decoration: line-through;
+}
+
+.dm-sidebar {
+  width: 350px;
+  border-right: 1px solid #dbdbdb; 
+  display: flex;
+  flex-direction: column;
+}
+
+.dm-header {
+  padding: 20px;
+  border-bottom: 1px solid #dbdbdb;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.dm-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.dm-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-bottom: 1px solid #fafafa;
+}
+
+.dm-item.active {
+  background: #fafafa;
+  border-left: 2px solid #262626;
+}
+
+.dm-item:hover {
+  background: #fafafa;
+}
+
+.dm-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #dbdbdb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.dm-info {
+  flex: 1;
+}
+
+.dm-name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.dm-preview {
+  color: #8e8e8e;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.add-list-section {
+  padding: 16px 20px;
+  border-top: 1px solid #dbdbdb;
+}
+
+.add-list-input {
+  width: 91%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #dbdbdb;
+  font-size: 14px;
+  margin-bottom: 8px;
+  margin-right: 20px;
+}
+
+.add-list-btn {
+  width: 100%;
+  padding: 6px;
+  background: #0095f6; /* i think old ig used to hv this ugly blue color so why not */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.task-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.task-header {
+  padding: 20px;
+  border-bottom: 1px solid #dbdbdb;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.task-list {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #fafafa;
+}
+
+
+
+.task-checkbox {
+  width: 16px;
+  height: 16px;
+}
+
+.task-text {
+  flex: 1;
+  font-size: 14px;
+}
+
+.task-delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #8e8e8e;
+}
+
+.add-task-section {
+  padding: 16px 20px;
+  border-top: 1px solid #dbdbdb;
+  display: flex;
+  gap: 8px;
+}
+
+.task-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.add-task-btn {
+  padding: 8px 16px;
+  background: #0095f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.no-selection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  color: #8e8e8e;
+  font-size: 14px;
+}

@@ -1,3 +1,4 @@
+/* removed the close button on the story bec it just wasnt working */
 .stories-container {
   display: flex;
   gap: 15px;
@@ -16,11 +17,11 @@
   padding: 0 25px 0 0;
 }
 
-.story-circle { /* AI HELP */
-  width: 66px;
-  height: 66px;
-  border-radius: 50%;
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+.story-circle { /* the gradient circle is not a border, but rather a circle behind a circle*/
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); /* AI HELP */
   padding: 2px;
   display: flex;
   align-items: center;
@@ -28,7 +29,7 @@
   position: relative
 }
 
-.story-circle::before {
+.story-circle::before { /* needs to befixed */
   content: '';
   width: 60px;
   height: 60px;
@@ -37,11 +38,6 @@
   position: absolute;
 }
 
-.story-emoji {
-  font-size: 24px;
-  z-index: 1;
-  position: relative;
-}
 
 .add-story::after {
   content: '+';
@@ -61,6 +57,13 @@
   font-weight: bold;
 }
 
+
+
+.story-emoji {
+  font-size: 24px;
+  z-index: 1;
+  position: relative;
+}
 .story-name {
   font-size: 12px;
   margin-top: 5px;
@@ -124,30 +127,33 @@
   justify-content: center;
 }
 
-/* now the modal that the stories open in */
+/* now the modal that the stories open in - the whole modal
+is basically a full background which it doesnt look like when veiwing the story, but the modal has tow parts, the full background part, 
+and then a story content rectangle in the centre bec i thought it was easier to code, basically using the same logic i used for stories */
+
 .story-modal {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100%; /* modal covers whole screen */
   height: 100%;
-  background: black; /* This makes the background black */
+  background: black; 
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.story-content {
+.story-content { /* the actual rectangle which is the story */
   position: relative;
   width: 350px;
-  height: 600px;
-  background: grey; /* This is the white card */
+  height: 620px;
+  background: grey; /* as of now this, but the story will hv the gradient background */
   border-radius: 10px;
   overflow: hidden;
   padding: 20px;
   text-align: center;
-z-index: 1; /* Add this */
+  /* z-index: 1;  this doesnt work, the close button is hiding behind */
 
 }
 
@@ -165,6 +171,8 @@ z-index: 1; /* Add this */
   font-size: 18px;
   line-height: 1.4;
 }
+
+
 /* Progress bars like Instagram */
 .progress-bars {
   position: absolute;
@@ -174,21 +182,6 @@ z-index: 1; /* Add this */
   display: flex;
   gap: 2px;
   z-index: 1001;
-}
-
-.close-btn {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  z-index: 1002; /* Increase this */
-  font-size: 18px;
 }
 
 .progress-bar {
@@ -201,6 +194,10 @@ z-index: 1; /* Add this */
 .progress-bar.active {
   background: white;
 }
+
+
+
+
 
 .gradient-1 { background: linear-gradient(45deg, #ff9a9e, #fad0c4); }
 .gradient-2 { background: linear-gradient(45deg, #a1c4fd, #c2e9fb); }
@@ -228,3 +225,5 @@ z-index: 1; /* Add this */
   right: 0;
   width: 50%;
 }
+
+/*instead of the arrow buttons, i decided to build this as the way we view stories on phones */

@@ -1,20 +1,20 @@
 .app {
   display: flex;
-  background: #000;
+  background: #000; /* DARK MODE WOOHOO */
   color: white;
 }
 
 .main-content {
-  margin-left: 291px;
-  width: calc(100% - 250px);
+  margin-left: 291px; /* had to adjust manually since nothing else was working */
+  width: calc(100% - 250px); /* this will take all the remaining width */
   background: #000;
   color: white;
-  height: 100vh; /* Add this */
-  overflow-y: auto; /* Add this - makes only main content scroll */
+  height: 100vh; /* fills the screen */
+  overflow-y: auto; /* Add this - makes only main content scroll (ai helped fix tis) */
 
 }
 
 .menu-item.active {
-  background: #f5f5f5;
+  background: grey; /*most instagram-like */
   font-weight: bold;
 }

@@ -22,9 +22,9 @@ function Sidebar({ setCurrentPage, currentPage }) {
         <div 
           className={`menu-item ${currentPage === 'home' ? 'active' : ''}`} onClick={() => setCurrentPage('home')} >🏠 Home</div>
         <div className={`menu-item ${currentPage === 'explore' ? 'active' : ''}`} onClick={() => setCurrentPage('explore')} >🔍 Explore</div>
-        <div className={`menu-item ${currentPage === 'messages' ? 'active' : ''}`} onClick={() => setCurrentPage('messages')} >💬 Messages</div>
-        <div className={`menu-item ${currentPage === 'journal' ? 'active' : ''}`} onClick={() => setCurrentPage('journal')} >📔 Journal</div>
-        <div className={`menu-item ${currentPage === 'quicklinks' ? 'active' : ''}`} onClick={() => setCurrentPage('quicklinks')} >🔗 Quick Links</div>
+        <div className={`menu-item ${currentPage === 'messages' ? 'active' : ''}`} onClick={() => setCurrentPage('messages')} >💬 Direct Messages</div>
+        <div className={`menu-item ${currentPage === 'journal' ? 'active' : ''}`} onClick={() => setCurrentPage('journal')} >📔 Saved</div>
+        <div className={`menu-item ${currentPage === 'quicklinks' ? 'active' : ''}`} onClick={() => setCurrentPage('quicklinks')} >🎬 Reels</div>
       </div>
 
       {/* Settings */}

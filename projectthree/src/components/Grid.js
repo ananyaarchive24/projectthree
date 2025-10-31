@@ -1,10 +1,10 @@
 import React, { useRef, useState } from 'react';
-import '../styles/stories.css';
+import '../styles/stories.css'; //not creating another css
 
 function Grid() {
   const [posts, setPosts] = useState(Array(9).fill(null)); // all posts are empty, so thatuser can add accordingly
-  const fileInputRef = useRef(null);
-  const [selectedIndex, setSelectedIndex] = useState(null);
+  const fileInputRef = useRef(null); 
+  const [selectedIndex, setSelectedIndex] = useState(null); //to track which index is being edited
 
   
   const handleAddClick = (index) => {
@@ -31,21 +31,21 @@ function Grid() {
   
 return (
   <div className="grid-container">
-    {posts.map((post, index) => (  // ← This ( already opens JSX
-      // REMOVE THIS BRACE → {
-      <div key={index} className="grid-post"> 
-        {post ? (
+    {posts.map((post, index) => (   //maps thru all 9 posts
+      
+      <div key={index} className="grid-post">  
+        {post ? ( //if post, show it with delete button
           <div className="post-container">
-            <img src={post} alt="Uploaded" />
+            <img src={post} alt="Uploaded" /> 
             <button className="delete-btn" onClick={() => handleDeletePhoto(index)}>×</button>
           </div>
-        ) : (
+        ) : ( //but if no post, show add button (i love if else statements)
           <button onClick={() => handleAddClick(index)}>+</button>
         )}
-      </div>  // ← Close the div wrapper
+      </div> 
     ))}      
     
-    <input
+    <input 
       type="file"
       accept="image/*"
       ref={fileInputRef}
