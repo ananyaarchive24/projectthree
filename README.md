@@ -1,6 +1,5 @@
 # projectthree
-
-# projectthree
+[![Athena Award Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Faward.athena.hackclub.com%2Fapi%2Fbadge)](https://award.athena.hackclub.com?utm_source=readme)
 disclaimer - kindly do not mind the informal tone and grammatical errors
 
 project in short: (sorry for the essay below, but ive tried to log everything possible)
