@@ -105,9 +105,67 @@ h1 {
   display: block;
 }
 
-.loading {
-  text-align: center;
-  padding: 40px;
-  font-size: 16px;
-  color: #8e8e8e;
+/* so much css for a 1 second screen 😭*/
+.news-skeleton {
+  background: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 12px;
+  animation: pulse 1.5s ease-in-out infinite; /* the pulseee */
+}
+
+.skeleton-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.skeleton-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f0f0f0;
+}
+
+.skeleton-text-small {
+  height: 12px;
+  width: 100px;
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+.skeleton-image {
+  height: 400px;
+  background: #f0f0f0;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.skeleton-actions {
+  height: 24px;
+  background: #f0f0f0;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.skeleton-text-medium {
+  height: 14px;
+  background: #f0f0f0;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.skeleton-text-large {
+  height: 14px;
+  width: 80%;
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
 }

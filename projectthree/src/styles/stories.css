@@ -29,10 +29,10 @@
   position: relative
 }
 
-.story-circle::before { /* needs to befixed */
+.story-circle::before { /* fixed */
   content: '';
-  width: 60px;
-  height: 60px;
+  width: 58px;
+  height: 58px;
   background: white;
   border-radius: 50%;
   position: absolute;
@@ -226,4 +226,82 @@ and then a story content rectangle in the centre bec i thought it was easier to 
   width: 50%;
 }
 
+.story-circle.viewed {
+  background: #dbdbdb !important; 
+}
+
 /*instead of the arrow buttons, i decided to build this as the way we view stories on phones */
+
+/* story response at bottom with send button */
+.journal-response-bottom {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  z-index: 1003; /* higher than nav areas so clicks work, but i think is not what fixed that problem bec z-index never works, what fixed it was the changes in js */
+}
+
+.response-input-bottom {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #dbdbdb;
+  border-radius: 25px;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.95); /*AI*/
+}
+
+.response-btn-send {
+  background: #0095f6; /*turns out this matches rly well with the gradients */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.response-btn-send:disabled {
+  background: #b2dffc;
+  cursor: not-allowed;
+}
+
+/* old response styles - keeping just in case 
+.journal-response {
+  margin-top: 20px;
+}
+
+.response-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  font-size: 14px;
+  resize: vertical;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.response-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #0095f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  width: 100%;
+}
+
+.response-btn:disabled {
+  background: #b2dffc;
+  cursor: not-allowed;
+} */

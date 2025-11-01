@@ -3,28 +3,22 @@
   width: 350px;
   margin: 0 auto 0 auto;
   overflow-y: scroll;
-  scroll-snap-type: y mandatory; /* This forces snap */
-  scroll-behavior: smooth; /* Adds smooth transition */
+  scroll-snap-type: y mandatory; /* this kinda forces the snap effect that shows when scrolling on phones */
   border-radius: 20px;
   border: 2px solid #dbdbdb;
-    scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */ 
 
 }
 
 .reel {
-  height: 80vh;
-  scroll-snap-align: start; /* This makes each reel snap */
+  scroll-snap-align: start; 
   position: relative;
-  flex-shrink: 0; /* Prevents shrinking */
-}
-
-
-.reel {
+  flex-shrink: 0; /* prev shrinking  */
   height: 100vh;
   scroll-snap-align: start;
-  position: relative;
 }
+
 
 .reel-video {
   width: 100%;
@@ -32,10 +26,10 @@
   object-fit: cover;
 }
 
-.reel-overlay {
-  position: absolute;
+.reel-overlay { /* overlay elements = profile link, audio button */
+  position: absolute; /* so that it is on top of the vid */
   bottom: 80px;
-  left: 15px;
+  left: 15px; 
   color: white;
 }
 
@@ -47,7 +41,7 @@
 }
 
 .audio-btn {
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.5); /* semi transparent black*/
   border: none;
   color: white;
   border-radius: 50%;

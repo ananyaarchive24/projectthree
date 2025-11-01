@@ -7,18 +7,18 @@ function Grid() {
   const [selectedIndex, setSelectedIndex] = useState(null); //to track which index is being edited
 
   
-  const handleAddClick = (index) => {
-    setSelectedIndex(index);
-    fileInputRef.current.click();
+  const handleAddClick = (index) => { //when clicked on add btn
+    setSelectedIndex(index); //selected index beocmes index of btn clicked
+    fileInputRef.current.click(); //opens the dialogue where u can upload photo
   };
 
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file && selectedIndex !== null) {
-      const imageUrl = URL.createObjectURL(file);
-      const newPosts = [...posts];
-      newPosts[selectedIndex] = imageUrl;
-      setPosts(newPosts);
+  const handleFileChange = (event) => { //when the file is selected
+    const file = event.target.files[0]; //get that file
+    if (file && selectedIndex !== null) { //if the file exists and selected index is not null
+      const imageUrl = URL.createObjectURL(file); //we create url for that file
+      const newPosts = [...posts]; //this means that we create a copy of posts array because we should not directly modify state
+      newPosts[selectedIndex] = imageUrl; //the selected index in the new posts array becomes the image url we just created
+      setPosts(newPosts); //then update the posts state with this new array
     }
   };
 

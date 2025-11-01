@@ -12,6 +12,7 @@ function Messages() {
   const [newTask, setNewTask] = useState(''); //new task input 
   const [newListName, setNewListName] = useState(''); //new list input
 
+
   const addTask = () => { //to the selected list add a new task (easy bec used this in last project too)
     if (newTask.trim() && selectedList) { //trim to avoid empty space
       const updatedLists = lists.map(list => 

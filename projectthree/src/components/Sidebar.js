@@ -36,7 +36,7 @@ text me!
       
       <div className="project-info">
         <p><strong>built for athena 2025 🫶 </strong></p>
-        <p>Instagram-style personal dashboard</p>
+        <p>Help - Add photos by clicking on the +, view stories and answer the prompts, explore the tabs!</p>
       </div>
     </div>
   </div>

@@ -1,31 +1,30 @@
 import React, { useState } from 'react';
 import '../styles/journal.css';
 
-function Journal() {
-  const [entries, setEntries] = useState([]); //array of the jouralentries
+function Journal({ journalEntries, setJournalEntries }) {
   const [showModal, setShowModal] = useState(false); //the modal for both showing and creating (didnt creatr diff for each for simplicity)
   const [currentEntry, setCurrentEntry] = useState(null); //entry that is being either edited or created
 
   const handleSaveEntry = () => { //to save entry
-  if (currentEntry) {  //if current entry
-    if (currentEntry.id) { //and if it has id
-      setEntries(entries.map(entry =>  //then edit existing entry
-        entry.id === currentEntry.id ? currentEntry : entry // if ids match, replace with current entry, else keep same
-      ));
-    } else { //but if no id already then create new entry
-
-const newEntry = { //new entry items created
-  id: Date.now(), //again using timestamp as id since no backend
-  title: currentEntry.title || 'Untitled', 
-  content: currentEntry.content || 'No note added', 
-  date: new Date().toLocaleDateString() 
-};      
-      setEntries([...entries, newEntry]); //this entry added to our array
+    if (currentEntry) {  //if current entry
+      if (currentEntry.id) { //and if it has id
+        setJournalEntries(journalEntries.map(entry =>  //then edit existing entry
+          entry.id === currentEntry.id ? currentEntry : entry // if ids match, replace with current entry, else keep same
+        ));
+      } else { //but if no id already then create new entry
+        const newEntry = { //new entry items created
+          id: Date.now(), //again using timestamp as id since no backend
+          title: currentEntry.title || 'Untitled', 
+          content: currentEntry.content || 'No note added', 
+          date: new Date().toLocaleDateString() 
+        };      
+        setJournalEntries([...journalEntries, newEntry]); //this entry added to our array
+      }
+      setShowModal(false); //when clicked on save, modal closes
+      setCurrentEntry(null); //reset current entry
     }
-    setShowModal(false); //when clicked on save, modal closes
-    setCurrentEntry(null); //reset current entry
-  }
-};
+  };
+
   return (
     <div className="journal-page">
       <div className="journal-header">
@@ -36,18 +35,19 @@ const newEntry = { //new entry items created
         }}>+ New Entry</button>
       </div>
 
+      <div className="journal-grid">
+        {journalEntries.map((entry) => (
+          <div key={entry.id} className="journal-card" onClick={() => { //click on the entry to open modal
+            setCurrentEntry(entry); //current enrty = what was clicked
+            setShowModal(true); // modal true
+          }}>
+            <h3>{entry.title || 'Untitled'}</h3>
+            <p>{(entry.content || '').substring(0, 100)}...</p> 
+            <small>{entry.date}</small>
+          </div>
+        ))}
+      </div>
 
-<div className="journal-grid">
-  {entries.map((entry) => (
-<div key={entry.id} className="journal-card" onClick={() => { //click on the entry to open modal
-  setCurrentEntry(entry); //current enrty = what was clicked
-  setShowModal(true); // modal true
-}}>
-  <h3>{entry.title || 'Untitled'}</h3>
-  <p>{(entry.content || '').substring(0, 100)}...</p> 
-  <small>{entry.date}</small>
-</div>  ))}
-</div>
       {/* create modal = edit modal */}
       {showModal && (
         <div className="modal">
@@ -66,8 +66,6 @@ const newEntry = { //new entry items created
             <button onClick={handleSaveEntry}>Save</button>
             <button onClick={() => setShowModal(false)}>Nevermind</button>
           </div>
-
-
         </div>
       )}
     </div>

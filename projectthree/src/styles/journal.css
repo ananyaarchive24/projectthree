@@ -27,7 +27,7 @@
 }
 
 .journal-card {
-  background: #fff8dc;
+  background: #fff8dc; /* default sticky note color */
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 10px;
@@ -36,7 +36,7 @@
   max-height: 260px;
   max-width: 260px;
   max-width: 260px;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* shadow like note */
 }
 
 .journal-card h3 {
@@ -50,11 +50,11 @@
   font-size: 14px;
   color: #666;
   max-width: 180px;
-overflow: hidden;
+  overflow: hidden; /*the text should not exceed the note */
  text-wrap: balance ;
 }
 
-/* Modal Styles */
+/* ----- */
 .modal {
   position: fixed;
   top: 0;
@@ -64,8 +64,8 @@ overflow: hidden;
   background: rgba(0,0,0,0.5);
   display: flex;
   align-items: center;
-  justify-content: center;
-  z-index: 1000;
+  justify-content: center; 
+  z-index: 1000; /* z index worked here */
 }
 
 .modal-content {
@@ -73,7 +73,7 @@ overflow: hidden;
   padding: 30px;
   border-radius: 10px;
   width: 500px;
-  max-width: 90%;
+  max-width: 90%; 
 }
 
 .modal-content input {
@@ -82,7 +82,7 @@ overflow: hidden;
   margin-bottom: 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 16px; 
 }
 
 .modal-content textarea {
@@ -93,11 +93,11 @@ overflow: hidden;
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 14px;
-  resize: vertical;
+  resize: vertical; /*vertical resising means only the height can be changed, not thw width of the editing/creating window*/
 }
 
 .modal-content button {
-  margin-right: 10px;
+  margin-right: 10px; 
   padding: 8px 16px;
   border: none;
   border-radius: 5px;
@@ -107,7 +107,6 @@ overflow: hidden;
 
 .sticky-notes-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
   padding: 20px;
 }

@@ -28,14 +28,23 @@ function NewsFeed() {
     }
   };
 
-  // show a loading message while fetching data
-  if (loading) {
-    return (
-      <div className="loading-message">
-        👩‍💻 Loading your content...
+  // show a loading screen while fetching data - this is only a 2 second screen but i rly wanted to imitate how ig shows that pulsing screen while loading
+if (loading) return (
+  <div className="news-feed">
+    {[1, 2, 3].map(i => ( //3 fake cards (skeletons)
+      <div key={i} className="news-skeleton"> 
+        <div className="skeleton-header"> 
+          <div className="skeleton-avatar"></div>
+          <div className="skeleton-text-small"></div>
+        </div>
+        <div className="skeleton-image"></div>
+        <div className="skeleton-actions"></div>
+        <div className="skeleton-text-medium"></div>
+        <div className="skeleton-text-large"></div>
       </div>
-    );
-  }
+    ))}
+  </div>
+);
 
   // to actually display the main feed
 return (
